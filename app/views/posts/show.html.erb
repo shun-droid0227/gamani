@@ -3,6 +3,7 @@
 <h3>コメント一覧</h3>
 <% @post.post_comments.each do |f|%>
   <%= f.sentence %>
+  <%= link_to "削除", post_comment_path(f),method: :delete %>
 <% end %>
 <h3>コメントを送信</h3>
 <%= form_with model: @post_comment do |f|%>
