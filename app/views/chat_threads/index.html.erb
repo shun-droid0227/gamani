@@ -1,0 +1,18 @@
+<h2>welcome ga-mani threads!!</h2>
+
+<%= link_to game_genles_path do%>
+  <h3>ジャンルを作成する</h3>
+<% end %>
+
+<%= link_to game_tittles_path do%>
+  <h3>タイトルを作成する</h3>
+<% end %>
+
+
+<%= form_with model: @new_thread do |f| %>
+  <%= f.text_field :name %>
+<% end %>
+<h3>スレッド一覧</h3>
+<% @chat_threads.each do |f|%>
+  <% link_to f.name, chat_thread_path(f) %><br>
+<% end %>
