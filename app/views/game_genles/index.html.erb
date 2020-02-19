@@ -1,0 +1,10 @@
+<h3>ジャンルを作成する</h3>
+<%=form_with model: @new_genle do |f|%>
+  <%= f.text_field :name%><br>
+  <%=f.submit "作成"%>
+<% end %>
+
+<h4>ジャンル一覧</h4>
+<% @game_genles.each do |f|%>
+  <%= f.name %><br>
+<% end %>

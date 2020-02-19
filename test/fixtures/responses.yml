@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  chat_thread_id: 1
+  imege_id: MyString
+  sentence: MyText
+
+two:
+  user_id: 1
+  chat_thread_id: 1
+  imege_id: MyString
+  sentence: MyText

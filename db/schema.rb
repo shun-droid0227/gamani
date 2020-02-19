@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_115226) do
+ActiveRecord::Schema.define(version: 2020_02_19_150630) do
+
+  create_table "chat_threads", force: :cascade do |t|
+    t.string "name"
+    t.integer "game_tittle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_genles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_tittles", force: :cascade do |t|
+    t.string "name"
+    t.integer "game_genle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "post_coments", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +53,15 @@ ActiveRecord::Schema.define(version: 2020_02_18_115226) do
     t.integer "user_id"
     t.string "image_id"
     t.string "sentence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "chat_thread_id"
+    t.string "imege_id"
+    t.text "sentence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
