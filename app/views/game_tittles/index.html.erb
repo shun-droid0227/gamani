@@ -1,0 +1,12 @@
+<h3>ゲームタイトル作成</h3>
+<%=form_with model: @new_tittle do |f|%>
+  <%= f.select :game_genle_id,GameGenle.all.map{|game_genle| [game_genle.name,game_genle.id]}%>
+  <%= f.text_field :name%>
+  <%= f.submit "作成"%>
+<% end %>
+
+<h3>ゲームタイトル一覧</h3>
+<% @game_tittles.each do |f| %>
+  <%= f.game_genle.name%>
+  <%= f.name%>
+<% end %>
