@@ -11,8 +11,10 @@
 
     <h3>投稿</h3>
     <% current_user.posts.each do |f| %>
+      <%= link_to (f) do%>
       <%= f.sentence %>
       <%= f.post_comments.count %>
+      <% end %>
       <%= link_to "削除",post_path(f),method: :delete %>
     <% end %>
     
