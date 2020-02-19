@@ -1,0 +1,11 @@
+<h3>投稿詳細</h3>
+<%= @post.sentence%><br>
+<h3>コメント一覧</h3>
+<% @post.post_comments.each do |f|%>
+  <%= f.sentence %>
+<% end %>
+<h3>コメントを送信</h3>
+<%= form_with model: @post_comment do |f|%>
+  <%= f.text_field :sentence%>
+<%=f.submit "送信"%>
+<% end %>

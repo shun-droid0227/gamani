@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   end
   
   scope module: :users do
-    resources :users
+    resources :users, only: [:show,:edit,:update]
   end
 
-  resources :posts
+  resources :posts, only: [:index,:show,:create,:destroy]
+  resources :post_comments, only: [:destroy]
+  post '/post_comments/:id', to: 'post_comments#create', as: 'post_comments'
+
 
 end
