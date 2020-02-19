@@ -6,7 +6,9 @@ class ChatThreadsController < ApplicationController
   end
 
   def create
-    chat_thread = ChatThread.new
+    chat_thread = ChatThread.new(chat_thread_params)
+    chat_thread.save
+    redirect_to chat_threds_path
 
   end
 

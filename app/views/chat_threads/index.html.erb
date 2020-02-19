@@ -8,9 +8,13 @@
   <h3>タイトルを作成する</h3>
 <% end %>
 
-
+<h3>スレッドを作成する</h3>
 <%= form_with model: @new_thread do |f| %>
+  ゲームジャンル<%= select_tag :game_genle_id, options_from_collection_for_select(GameGenle.all, :id, :name) %><br>
+  ゲームタイトル<%= f.select :game_tittle_id,GameTittle.all.map{|game_tittle| [game_tittle.name,game_tittle.id]}%><br>
+  スレッドタイトル
   <%= f.text_field :name %>
+  <%= f.submit "スレッド作成"%>
 <% end %>
 <h3>スレッド一覧</h3>
 <% @chat_threads.each do |f|%>
