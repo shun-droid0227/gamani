@@ -1,0 +1,8 @@
+<h1>user edit</h1>
+<%binding.pry%>
+<%= form_with model: @user do |f| %>
+  <%= f.text_field :name %><br>
+  <%= f.text_field :email %><br>
+  <%= f.text_area :introduction %><br>
+  <%= f.submit "保存"%>
+<% end %>
