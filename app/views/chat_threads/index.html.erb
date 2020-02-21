@@ -18,5 +18,5 @@
 <% end %>
 <h3>スレッド一覧</h3>
 <% @chat_threads.each do |f|%>
-  <% link_to f.name, chat_thread_path(f) %><br>
+  <%= link_to f.name, chat_thread_path(f) %><br>
 <% end %>
