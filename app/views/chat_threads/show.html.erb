@@ -1,0 +1,10 @@
+<h2><%= @chat_thread.name %></h2>
+  <%= form_with model: @response do |f| %>
+  <%= f.text_area :sentence%>
+  <%= f.hidden_field :chat_thread_id, :value => @chat_thread.id%>
+  <%= f.submit "書き込む"%>
+<% end %>
+
+<% @chat_thread.responses.each do |f| %>
+  <%= f.sentence%><br>
+<% end %>
