@@ -4,6 +4,8 @@
     <div class = "col-xs-3">
       <h1>user info</h1>
       <%= link_to 'user_edit', edit_user_path(@user) %>
+      <h2>user index</h2>
+      <%= link_to "ユーザー一覧", users_path %>
     </div>
       
     <div class = "col-xs-6">
@@ -18,6 +20,10 @@
         <%= f.sentence %>
         <%= f.post_comments.count %>
       <% end %>
+        <div id="favorites_buttons_<%= f.id %>">
+          <%= render 'favorites/favorite', post: f %>
+        </div>
+      <%= link_to "削除",post_path(f) %>
       <%= link_to "削除",post_path(f),method: :delete %>
       <% end %>
     </div>
