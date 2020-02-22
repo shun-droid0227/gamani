@@ -3,13 +3,11 @@
 
     <h1>user info</h1>
     <%= link_to 'user_edit', edit_user_path(@user) %>
+    <div id = "follow_buttons">
+      <%= render 'relationships/follow_button', user: @user%>
+    </div>
 
-    <%= form_with model: @post do |f|%>
-      <%= f.text_field :sentence%>
-      <%=f.submit "送信"%>
-    <% end %>
-
-    <h3>投稿</h3>
+    <h3>投稿一覧</h3>
     <% current_user.posts.each do |f| %>
       <%= f.sentence %>
       <%= f.post_comments.count %>
