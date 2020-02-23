@@ -2,6 +2,10 @@ class Users::UsersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def home
+    @user = current_user
+  end
+
   def index
     @users = User.all
   end

@@ -2,6 +2,7 @@
   <div class = "row">
 
     <h1>user info</h1>
+    <%= icon 'fas', 'home' %>
     <%= link_to 'user_edit', edit_user_path(@user) %>
     <div id = "follow_buttons">
       <%= render 'relationships/follow_button', user: @user%>
