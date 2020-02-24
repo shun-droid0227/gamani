@@ -4,6 +4,7 @@ class Users::UsersController < ApplicationController
 
   def home
     @user = current_user
+    @post = Post.new
   end
 
   def index

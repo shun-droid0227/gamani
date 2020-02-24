@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html,body,.container-fluid,.row{
+html,body,.container,.row{
   height: 100%;
 }
 
@@ -11,7 +11,13 @@ html,body,.container-fluid,.row{
 }
 
 .home_button{
+  font-size: 25px;
+  padding-top: 10px;
   
+}
+
+.row{
+  margin: 0 auto;
 }
 
 .col-xs-6{

@@ -1,0 +1,12 @@
+<h3>投稿</h3>
+      <% current_user.posts.each do |f| %>
+        <%= link_to (f) do%>
+        <%= f.sentence %>
+        <%= f.post_comments.count %>
+      <% end %>
+        <div id="favorites_buttons_<%= f.id %>">
+          <%= render 'favorites/favorite', post: f %>
+        </div>
+      <%= link_to "削除",post_path(f),method: :delete, remote: true %>
+      <% end %>
+    </div>
