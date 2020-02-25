@@ -28,6 +28,7 @@ html,body,.container,.row{
 
 .new_form{
   border-bottom: solid 1px;
+  border-bottom: solid 1px;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: black;
@@ -41,4 +42,20 @@ html,body,.container,.row{
   outline: none;
   resize: none;
   width: 100%;
+}
+
+#user_posts{
+  word-break: break-word;
+}
+
+.post_sentence{
+  font-size: 15px;
+  color: rgb(184, 184, 184);
+  min-height: 200px;
+  text-decoration: none;
+  padding: 5px 0;
+}
+.post_container{
+  border-bottom: solid 1px;
+  padding: 0;
 }
