@@ -1,19 +1,7 @@
-<div class = "container mr-0">
-  <div class = "row">
+<div class = "col-xs-12 user_back_image">
 
-    <h1>user info</h1>
-    <%= icon 'fas', 'home' %>
-    <%= link_to 'user_edit', edit_user_path(@user) %>
-    <div id = "follow_buttons">
-      <%= render 'relationships/follow_button', user: @user%>
-    </div>
+</div>
 
-    <h3>投稿一覧</h3>
-    <% current_user.posts.each do |f| %>
-      <%= f.sentence %>
-      <%= f.post_comments.count %>
-      <%= link_to "削除",post_path(f),method: :delete %>
-    <% end %>
-    
-  </div><!--end of row-->
-</div><!--end of container-->
+<div id = "user_posts">
+    <%= render 'posts/user_posts'%>
+</div>

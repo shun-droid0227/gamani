@@ -1,6 +1,14 @@
-<%= form_with model: post, url: posts_path(post), metod: :post do |f|%>
-  <%= f.text_area :sentence,class: "input_post", required: true, :placeholder => "どんな事して過ごしてる？"%>
-  <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
-    投稿する
-  <% end %>
-<% end %>
+<div class = 'col-xs-12'>HOME</div>
+<div class = 'col-xs-12 form_container'>
+  <div class = "col-xs-2 user_icon">
+    <%= attachment_image_tag current_user, :image, :fill,25,25, class: "image-circle pull-left profile-thub", fallback: "no_image.jpg", size:'60x60' %>
+  </div>
+  <div class = "col-xs-10 new_form" style = "text-align: right;">
+    <%= form_with model: post, url: posts_path(post), metod: :post do |f|%>
+      <%= f.text_area :sentence,class: "input_post", required: true, :placeholder => "どんな事して過ごしてる？"%>
+      <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
+        投稿する
+      <% end %>
+    <% end %>
+  </div>
+</div>

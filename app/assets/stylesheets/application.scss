@@ -20,6 +20,42 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+html,body,.container,.row{
+  height: 100%;
+}
+
 body{
   background-color:black;
+}
+
+.main_line{
+  border-bottom: solid 1px;
+}
+
+.row{
+  margin: 0 auto;
+}
+
+.col-xs-6{
+  height: 100%;
+  border-left: solid 1px;
+  border-right: solid 1px;
+}
+
+.home_button{
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.home_button{
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.height-fixed {
+  height: 95vh;
 }
