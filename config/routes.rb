@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   scope module: :users do
     resources :users, only: [:index,:show,:edit,:update]
+    get '/home', to: 'users#home', as: 'users_home'
   end
   
   resources :posts, only: [:index,:show,:create,:destroy] do

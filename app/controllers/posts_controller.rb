@@ -15,13 +15,13 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save(post_params)
-    redirect_to posts_path
+    @post = Post.new
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to posts_path
+    @post = Post.new
   end
 
 

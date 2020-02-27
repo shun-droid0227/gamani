@@ -1,3 +1,79 @@
 // Place all the styles related to the users/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_form{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+}
+
+.input_post{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+}
+
+#user_posts{
+  word-break: break-word;
+}
+
+.post_sentence{
+  font-size: 15px;
+  color: rgb(184, 184, 184);
+  min-height: 200px;
+  text-decoration: none;
+  padding: 10px 0;
+}
+.post_container{
+  border-bottom: solid 1px;
+  padding: 0;
+}
+
+.user_icon{
+  padding-top: 15px;
+}
+
+.form_container{
+  padding: 0;
+  border-bottom: solid 1px;
+}
+
+.user_back_image{
+  width: 100%;
+  height: 200px;
+  background-color: blue;
+}
+
+.user_info{
+  // min-height: 150px;
+  margin-top: 35px;
+  padding-bottom: 20px;
+  color: white;
+  background-color: black;
+  border-bottom: solid 1px;
+}
+
+.rounded_corners{
+  border-radius: 25%;
+}
+
+.tittle_home{
+  font-size:20px;
+  padding-top:15px;
+  padding-bottom:15px;
+  color:white;
+  border-bottom: solid 1px;
+  border-color: rgb(184, 184, 184);
+  margin: 0 -15px;
+}
+
+.icon_position{
+  position: absolute;
+  top: 130px;
+  left: 20px;
+}

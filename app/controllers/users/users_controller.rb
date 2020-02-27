@@ -2,6 +2,11 @@ class Users::UsersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def home
+    @user = current_user
+    @post = Post.new
+  end
+
   def index
     @users = User.all
   end
@@ -17,7 +22,6 @@ class Users::UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(user_params)
-    redirect_to edit_user_path(user)
   end
 
 
