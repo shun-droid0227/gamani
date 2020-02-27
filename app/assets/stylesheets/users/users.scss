@@ -48,3 +48,32 @@
   height: 200px;
   background-color: blue;
 }
+
+.user_info{
+  // min-height: 150px;
+  margin-top: 35px;
+  padding-bottom: 20px;
+  color: white;
+  background-color: black;
+  border-bottom: solid 1px;
+}
+
+.rounded_corners{
+  border-radius: 25%;
+}
+
+.tittle_home{
+  font-size:20px;
+  padding-top:15px;
+  padding-bottom:15px;
+  color:white;
+  border-bottom: solid 1px;
+  border-color: rgb(184, 184, 184);
+  margin: 0 -15px;
+}
+
+.icon_position{
+  position: absolute;
+  top: 130px;
+  left: 20px;
+}

@@ -1,7 +1,7 @@
 <% current_user.posts.each do |f| %>
   <div class = "col-xs-12 post_container">
     <div class = "col-xs-2" style = 'padding-top: 15px;'>
-      <%= attachment_image_tag current_user, :image, :fill,25,25, class: "image-circle pull-left profile-thub", fallback: "no_image.jpg", size:'50x50' %>
+      <%= attachment_image_tag current_user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'50x50' %>
     </div>
     <%= link_to (f) do%>
       <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
