@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @post = Post.new
+    @post.post_images.build
   end
 
   def show
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id,:image,:sentence)
+    params.require(:post).permit(:user_id, :sentence, :post_id, post_images_images:[])
   end
 
 end
