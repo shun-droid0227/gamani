@@ -9,7 +9,7 @@
 }
 
 .input_post{
-  background-color: black;
+  background-color:rgb(83, 83, 83);
   color: white;
   font-size: 20px;
   border: none;
@@ -46,7 +46,7 @@
 .user_back_image{
   width: 100%;
   height: 200px;
-  background-color: blue;
+  background-color:gray;
 }
 
 .user_info{
@@ -88,8 +88,52 @@
   }
 }
 
+.iamge_icon_button{
+  cursor: pointer;
+  i {
+    font-size: 1.5em;
+    color:blue;
+  }
+  &--default {
+    display: none;
+  }
+}
+
 .image_icon_position{
   position: absolute;
+  top: -70px;
+  left: 54px;
+}
+
+.image_file_position{
+  position: absolute;
   top: 90px;
-  right: 110px;
+  left: 54px;
+}
+
+.roll_image_position{
+  position: absolute;
+  top: -160px;
+  left: 45%;
+}
+
+.roll_iamge_icon_button{
+  cursor: pointer;
+  i {
+    font-size: 3.0em;
+    color:blue;
+  }
+  &--default {
+    display: none;
+  }
+}
+
+.user_icon_border{
+  border: 3px;
+  padding: 3px;
+  background-color: black;
+}
+
+.profile_field{
+  background-color:rgb(83, 83, 83);
 }

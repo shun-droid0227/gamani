@@ -20,7 +20,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-html,body,.container,.row{
+html,body,.container-fluid,.row{
   height: 100%;
 }
 
@@ -36,7 +36,7 @@ body{
   margin: 0 auto;
 }
 
-.col-xs-6{
+.time_line{
   height: 100%;
   border-left: solid 1px;
   border-right: solid 1px;

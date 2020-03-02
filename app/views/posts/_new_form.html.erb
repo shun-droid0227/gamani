@@ -1,13 +1,15 @@
-<div class = 'col-xs-12'><p class = "tittle_home">ホーム</p></div>
+<div class = 'col-xs-12'>
+  <p class = "tittle_home" style = 'padding-left: 20px'>ホーム</p>
+  </div>
 <div class = 'col-xs-12 form_container'>
   <div class = "col-xs-2" style = "padding: 10px 0px 0px 5px;">
-    <%= attachment_image_tag current_user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'60x60' %>
+    <%= attachment_image_tag current_user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners user_icon_border", fallback: "no_image.jpg", size:'60x60' %>
   </div>
   <div class = "col-xs-10 new_form" style = "text-align: right;">
     <%= form_with model: post, url: posts_path(post), metod: :post do |f|%>
       <%= f.text_area :sentence,class: "input_post", required: true, :placeholder => "どんな事して過ごしてる？"%>
         <%= f.label :post_images_images, class: "iamge_file_button" do %>
-          <i class="far fa-images file_icon image_icon_position"></i>
+          <i class="far fa-images file_icon image_file_position"></i>
           <%= f.attachment_field :post_images_images,style: "display: none;", accept: 'image/jpg,image/jpeg,image/png,image/gif', multiple: true %>
         <% end %>
       <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
