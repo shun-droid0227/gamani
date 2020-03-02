@@ -1,0 +1,9 @@
+<%= form_with model: post_comment do |f|%>
+  <%= f.text_field :sentence,class: "input_post",:placeholder => "コメントを記入"%>
+<%=f.submit "送信"%>
+<% end %>
+
+<% post.post_comments.each do |f|%>
+  <%= f.sentence %>
+  <%= link_to "削除", post_comment_path(f),method: :delete , remote: :true%>
+<% end %>

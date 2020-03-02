@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     post.user_id = current_user.id
     post.save(post_params)
     @post = Post.new
+    @user = current_user
   end
 
   def destroy
