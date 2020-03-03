@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     @post = Post.new
+    redirect_to users_home_path
   end
 
 

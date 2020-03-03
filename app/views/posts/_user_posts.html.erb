@@ -1,7 +1,7 @@
 <% user.posts.each do |f| %>
   <div class = "col-xs-12 post_container">
     <div class = "col-xs-2" style = 'padding-top: 15px;'>
-      <%= attachment_image_tag user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'50x50' %>
+      <%= attachment_image_tag user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'60x60' %>
     </div>
     <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
 
@@ -10,7 +10,7 @@
       </div>
 
       <%= link_to (f) do%>
-        <div class = "col-xs-12" style = "padding-right: 0;">
+        <div class = "col-xs-12" style = "padding-right: 0; padding-top: 5px; padding-bottom: 5px;">
           <%= f.sentence %>
         </div>
       <% end %>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class = "col-xs-4 post_icons">
-        <%= link_to post_path(f),method: :delete, remote: true do%>
+        <%= link_to post_path(f),method: :delete do%>
           <i class="fas fa-trash"></i>
           削除
         <% end %>

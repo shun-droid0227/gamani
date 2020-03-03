@@ -20,6 +20,9 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+a{
+  color: white;
+}
 html,body,.container-fluid,.row{
   height: 100%;
 }
@@ -62,4 +65,8 @@ body{
 
 .no_line{
   text-decoration: none;
+}
+
+.home_icon{
+  padding-left: 60px;
 }
