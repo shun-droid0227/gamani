@@ -1,2 +1,2 @@
-$('#user_posts').html("<%= j(render 'posts/user_posts',user:@user) %>");
+$('#user_posts').html("<%= j(render 'posts/user_posts',posts: @time_line_posts) %>");
 $('#new_form').html("<%= j(render 'posts/new_form',post: @post) %>");

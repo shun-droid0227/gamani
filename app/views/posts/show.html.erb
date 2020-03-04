@@ -58,14 +58,13 @@
   </div>
   
     <div class = 'row'>
-      <div class = "col-xs-4 post_icons">
-        <%= link_to (@post) do%>
-          <i class="far fa-comments"></i>
-          <% if @post.post_comments.count != 0%>
-            <%= @post.post_comments.count%>コメント
-          <% else %>
-            コメント
-          <% end %>
+
+      <div class = "col-xs-4 post_icons" style = 'color: white;'>  
+        <i class="far fa-comments"></i>
+        <% if @post.post_comments.count != 0%>
+          <%= @post.post_comments.count%>コメント
+        <% else %>
+          コメント
         <% end %>
       </div>
 
@@ -76,7 +75,7 @@
       </div>
 
       <div class = "col-xs-4 post_icons">
-        <%= link_to post_path(@post),method: :delete, remote: true do%>
+        <%= link_to post_path(@post),method: :delete do%>
           <i class="fas fa-trash"></i>
           削除
         <% end %>

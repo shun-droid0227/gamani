@@ -5,6 +5,10 @@ class Users::UsersController < ApplicationController
   def home
     @user = current_user
     @post = Post.new
+
+    get_users = current_user.followings.pluck(:id)
+    get_users.push(current_user.id)
+    @time_line_posts = Post.where(user_id: get_users)
   end
 
   def index

@@ -32,4 +32,10 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
+  # def following_posts(user)
+  #   get_users = user.followings.pluck(:id)
+  #   get_users.push(user.id)
+  #   return Post.where(user_id: get_users)
+  # end
+
 end
