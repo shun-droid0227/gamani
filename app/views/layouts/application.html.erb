@@ -33,24 +33,21 @@
                 <% end %>
               </div>
             </div>
-            
-            
-            <div class = 'col-xs-12 home_icon' >
-              <div class = "home_button">
-                <%= link_to "#" do%>
-                  <%= icon 'fas', 'search-plus' %>
-                  投稿を検索
-                <% end %>
-              </div>
-            </div>
 
-            <div class = 'col-xs-12 home_icon' >
-              <div class = "home_button">
-                <%= link_to users_path do%>
-                  <i class="fas fa-user-friends"></i>
-                  ユーザーを検索
-                <% end %>
+            <div class = 'col-xs-12 home_icon'>
+
+              <%= form_tag(users_path , method: :get) do %>
+              <div class = 'col-xs-12' style = 'padding: 5px 0px 5px 0px'>
+                <%= text_field_tag(:search_word,params[:search_word],style: 'border-radius: 5px;',placeholder: 'キーワード')%>
               </div>
+
+              <div class = 'col-xs-12'>
+                <%= select_tag(:search_content,options_for_select([["投稿検索","post"], ["ユーザー検索","user"]]))%>
+                <%= submit_tag "検索" ,class: 'search_submit'%>
+              </div>
+
+              <% end %>
+
             </div>
             
             

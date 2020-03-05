@@ -32,6 +32,10 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
+  def self.search(search_word)
+      @contents = User.where("name LIKE(?)","%#{search_word}%")
+  end
+
   # def following_posts(user)
   #   get_users = user.followings.pluck(:id)
   #   get_users.push(user.id)

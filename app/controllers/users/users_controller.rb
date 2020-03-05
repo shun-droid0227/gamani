@@ -12,7 +12,13 @@ class Users::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    search_word = params[:search_word]
+    @search_content = params[:search_content]
+    if @search_content == "post"
+      @contents = Post.search(search_word)
+    elsif @search_content == "user"
+      @contents = User.search(search_word)
+    end
   end
 
   def show
