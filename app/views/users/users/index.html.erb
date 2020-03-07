@@ -8,4 +8,6 @@
 <% elsif @search_content == 'post'%>
   <%= render 'posts/user_posts',posts: @contents%>
 
+<% elsif @search_content == 'thread'%>
+  <%= render 'chat_threads/thread_index',thread: @thread,chat_threads: @contents%>
 <% end %>

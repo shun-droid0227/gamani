@@ -8,7 +8,7 @@ class Users::UsersController < ApplicationController
 
     get_users = current_user.followings.pluck(:id)
     get_users.push(current_user.id)
-    @time_line_posts = Post.where(user_id: get_users)
+    @time_line_posts = Post.where(user_id: get_users).order(created_at: :desc)
   end
 
   def index
@@ -18,6 +18,9 @@ class Users::UsersController < ApplicationController
       @contents = Post.search(search_word)
     elsif @search_content == "user"
       @contents = User.search(search_word)
+    elsif @search_content == "thread"
+      @contents = ChatThread.search(search_word)
+      @thread = ChatThread.new
     end
   end
 

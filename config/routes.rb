@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :post_comments, only: [:destroy]
   post '/post_comments/:id', to: 'post_comments#create', as: 'post_comments'
 
-  resources :chat_threads, only: [:index,:show,:create,:destroy]
+  resources :chat_threads, only: [:index,:show,:create,:destroy,:new]
   resources :game_tittles, only: [:index,:create,:destroy]
   resources :game_genles, only: [:index,:create,:destroy]
   resources :responses, only: [:create]

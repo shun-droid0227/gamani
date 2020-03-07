@@ -1,10 +1,38 @@
-<h2><%= @chat_thread.name %></h2>
-  <%= form_with model: @response do |f| %>
-  <%= f.text_area :sentence%>
-  <%= f.hidden_field :chat_thread_id, :value => @chat_thread.id%>
-  <%= f.submit "書き込む"%>
-<% end %>
+<div class = 'col-xs-12'>
+  <p class = "tittle_home" style = 'padding-left: 20px'><i class="fas fa-clipboard-list"></i><%= @chat_thread.name %></p>
+</div>
 
-<% @chat_thread.responses.each do |f| %>
-  <%= f.sentence%><br>
+<div class = 'col-xs-12 new_form' style = "text-align: right; border-bottom: solid 1px;">
+    <%= form_with model: @response do |f| %>
+    <%= f.text_area :sentence,class: "input_post",style: 'border-radius: 5px;'%>
+    <%= f.hidden_field :chat_thread_id, :value => @chat_thread.id%>
+    <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
+        書き込む
+    <% end %>
+  <% end %>
+</div>
+
+<% @thread_responces.each do |f| %>
+  <div class = "col-xs-12 post_container">
+
+    <div class = "col-xs-2" style = 'padding-top: 15px;'>
+      <%= attachment_image_tag f.user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'60x60' %>
+    </div>
+
+    <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
+      
+      <div class = 'col-xs-12'>
+        <%= link_to f.user.name, f.user %>
+      </div>
+
+      <div class = 'col-xs-12' style = 'padding-top: 5px; padding-bottom: 5px;'>
+        <%= f.sentence%>
+      </div>
+
+      <div class = 'col-xs-12'>
+        <%= f.created_at%>
+      </div>
+
+    </div>
+  </div>
 <% end %>
