@@ -1,0 +1,24 @@
+<div class = 'col-xs-12' style = 'border-bottom: solid 1px; border-color: white; padding-bottom: 10px; color: white'>
+  <h2>welcome ga-mani threads!!</h2>
+  <%= form_with model: thread,url: chat_threads_path do |f| %>
+    スレッドタイトル
+    <%= f.text_field :name,style: 'width: 30%; border-radius: 5px;' %>
+    <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
+      <i class="fas fa-plus-square"></i>
+      新しいスレッドを作成
+    <% end %>
+  <% end %>
+</div>
+
+<div class = 'col-xs-12' style = 'color: white'>
+  <h3>スレッド一覧</h3>
+  <% chat_threads.each do |f|%>
+    <div style = 'padding-top: 5px; font-size: 15px;'>
+      <%= link_to chat_thread_path(f) do%>
+        <p><%= f.name %>
+        （<%= f.responses.count %>）
+      </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
