@@ -1,5 +1,7 @@
 class ChatThreadsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @new_thread = ChatThread.new
   end

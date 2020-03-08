@@ -1,5 +1,7 @@
 class ResponsesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     response = Response.new(response_params)
     response.user_id = current_user.id
