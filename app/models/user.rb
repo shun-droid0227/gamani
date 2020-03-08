@@ -8,8 +8,8 @@ class User < ApplicationRecord
         validates :name,    length: { in: 1..75 }
 
 
-        attachment :image
-        attachment :roll_image
+        attachment :image, type: :image
+        attachment :roll_image, type: :image
 
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
