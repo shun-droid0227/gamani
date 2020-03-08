@@ -2,7 +2,7 @@
   <h2>welcome ga-mani threads!!</h2>
   <%= form_with model: thread,url: chat_threads_path do |f| %>
     スレッドタイトル
-    <%= f.text_field :name,style: 'width: 30%; border-radius: 5px;' %>
+    <%= f.text_field :name, required: true,style: 'width: 30%; border-radius: 5px;' %>
     <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
       <i class="fas fa-plus-square"></i>
       新しいスレッドを作成

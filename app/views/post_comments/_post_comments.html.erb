@@ -1,7 +1,7 @@
 <div class = 'row'>
   <div class = 'col-xs-12' style = 'padding-top: 15px; padding-bottom: 15px; border-bottom: solid 1px;'>
     <%= form_with model: post_comment do |f|%>
-      <%= f.text_area :sentence,class: "input_post" ,style: 'border-radius: 10px;',:placeholder => "コメントを記入"%>
+      <%= f.text_area :sentence, required: true,class: "input_post" ,style: 'border-radius: 10px;',:placeholder => "コメントを記入"%>
       <div style= 'padding-top: 10px'>
         <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
         <i class="far fa-paper-plane"></i>
