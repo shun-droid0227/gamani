@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   has_many :post_images, dependent: :destroy
   accepts_attachments_for :post_images, attachment: :image
 
+  validates :sentence,    length: { in: 1..75 }
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end

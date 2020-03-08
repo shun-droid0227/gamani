@@ -11,7 +11,7 @@
       <%= f.text_area :sentence,class: "input_post",style: 'border-radius: 5px;', required: true, :placeholder => "どんな事して過ごしてる？"%>
         <%= f.label :post_images_images, class: "iamge_file_button" do %>
           <i class="far fa-images file_icon image_file_position"></i>
-          <%= f.attachment_field :post_images_images,style: "display: none;", accept: 'image/jpg,image/jpeg,image/png,image/gif', multiple: true %>
+          <%= f.attachment_field :post_images_images,style: 'display: none;', accept:'image/jpg,image/jpeg,image/png,image/gif',multiple: true %>
         <% end %>
       <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
         投稿する
