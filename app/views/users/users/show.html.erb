@@ -27,5 +27,5 @@
 <%= attachment_image_tag @user, :image, :fill,100,100, class: "image-circle pull-left profile-thub rounded_corners icon_position user_icon_border", fallback: "no_image.jpg", size:'100x100' %>
 
 <div id = "user_posts">
-  <%= render 'posts/user_posts', posts: @user.posts%>
+  <%= render 'posts/user_posts', posts: @user_posts%>
 </div>
