@@ -1,6 +1,7 @@
 class Users::UsersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :correct_user, only:[:edit,:update]
 
   def home
     @user = current_user
@@ -44,6 +45,12 @@ class Users::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name,:introduction,:email,:image,:roll_image)
+  end
+
+  def correct_user
+    if params[:id].to_i != current_user.id
+      redirect_to user_path(current_user)
+    end
   end
 
 end
