@@ -77,6 +77,14 @@
 
           <div class = "col-xs-3 home_icon">
             <p style = "font-size: 20px; color: white;">お気に入りスレッド一覧</p>
+            <% current_user.favorite_threads.each do |thread|%>
+              <%= link_to thread.chat_thread.name, chat_thread_path(thread.chat_thread) %>
+
+              <div id = 'favorite_thread_buttons_<%= thread.chat_thread_id %>'>
+                <%= render 'favorite_threads/favorite_thread',chat_thread: thread.chat_thread %>
+              </div>
+
+            <% end %>
           </div>
 
         </div><!--end of row-->

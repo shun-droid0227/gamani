@@ -11,7 +11,7 @@
 </div>
 
 <div class = 'col-xs-12' style = 'color: white'>
-  <h3>スレッド一覧</h3>
+  <h3>スレッド一覧 <%= current_user.favorite_threads.count%> </h3>
   <% chat_threads.each do |f|%>
     <div style = 'padding-top: 5px; font-size: 15px;'>
       <%= link_to chat_thread_path(f) do%>
@@ -19,6 +19,9 @@
         （<%= f.responses.count %>）
       </p>
       <% end %>
+    </div>
+    <div id = 'favorite_thread_buttons_<%= f.id %>'>
+      <%= render 'favorite_threads/favorite_thread',chat_thread: f %>
     </div>
   <% end %>
 </div>
