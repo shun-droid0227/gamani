@@ -1,0 +1,2 @@
+module FavoriteThredsHelper
+end

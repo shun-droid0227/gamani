@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_101758) do
+ActiveRecord::Schema.define(version: 2020_03_09_180757) do
 
   create_table "chat_threads", force: :cascade do |t|
     t.string "name"
     t.integer "game_tittle_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorite_threads", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "chat_thread_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_thread_id"], name: "index_favorite_threads_on_chat_thread_id"
+    t.index ["user_id"], name: "index_favorite_threads_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
