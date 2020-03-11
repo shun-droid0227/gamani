@@ -6,6 +6,8 @@ class ResponsesController < ApplicationController
     response = Response.new(response_params)
     response.user_id = current_user.id
     response.save
+    thread = ChatThread.find(response.chat_thread_id)
+    thread.touch
     redirect_to chat_thread_path(response.chat_thread_id)
   end
 

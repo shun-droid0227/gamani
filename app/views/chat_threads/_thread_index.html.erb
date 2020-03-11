@@ -1,27 +1,40 @@
 <div class = 'col-xs-12' style = 'border-bottom: solid 1px; border-color: white; padding-bottom: 10px; color: white'>
   <h2>welcome ga-mani threads!!</h2>
   <%= form_with model: thread,url: chat_threads_path do |f| %>
-    スレッドタイトル
-    <%= f.text_field :name, required: true,style: 'width: 30%; border-radius: 5px;' %>
-    <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
-      <i class="fas fa-plus-square"></i>
-      新しいスレッドを作成
-    <% end %>
+
+    <div class = 'col-xs-12'>
+      スレッドタイトル
+      <%= f.text_field :name, required: true,style: 'width: 100%; border-radius: 5px; color: black;' %>
+    </div>
+
+    <div class = 'col-xs-12'>
+      スレッド説明文
+      <%= text_area_tag :sentence, '', required: true, style: 'width: 100%; color: black; border-radius: 5px;'%>
+    </div>
+
+    <div class = 'col-xs-12'>
+      <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
+        <i class="fas fa-plus-square"></i>
+        新しいスレッドを作成
+      <% end %>
+    </div>
   <% end %>
 </div>
 
-<div class = 'col-xs-12' style = 'color: white'>
-  <h3>スレッド一覧 <%= current_user.favorite_threads.count%> </h3>
-  <% chat_threads.each do |f|%>
-    <div style = 'padding-top: 5px; font-size: 15px;'>
+<div class = 'col-xs-12'>
+  <h3 style = 'color: white;'>スレッド一覧</h3>
+</div>
+
+<% chat_threads.each do |f|%>
+  <div class = 'col-xs-12' style = 'color: white'>
+    <div style = 'padding-top: 5px; font-size: 15px; float: left;'>
       <%= link_to chat_thread_path(f) do%>
-        <p><%= f.name %>
+        <%= f.name %>
         （<%= f.responses.count %>）
-      </p>
-      <% end %>
     </div>
-    <div class = 'favorite_thread_buttons_<%= f.id %>'>
+    <% end %>
+    <div class = 'favorite_thread_buttons_<%= f.id %>' style = 'padding-top: 5px; float: left;'>
       <%= render 'favorite_threads/favorite_thread',chat_thread: f %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

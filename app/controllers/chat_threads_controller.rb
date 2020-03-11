@@ -15,6 +15,7 @@ class ChatThreadsController < ApplicationController
     chat_thread = ChatThread.new(chat_thread_params)
     chat_thread.game_tittle_id = 1
     chat_thread.save
+    response = Response.create(chat_thread_id: chat_thread.id,user_id: current_user.id,sentence: params[:sentence])
     redirect_to chat_thread_path(chat_thread)
   end
 
@@ -28,7 +29,7 @@ class ChatThreadsController < ApplicationController
   private
 
   def chat_thread_params
-    params.require(:chat_thread).permit(:name)
+    params.require(:chat_thread).permit(:name,:game_title_id)
   end
 
 end

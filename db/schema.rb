@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_180757) do
     t.string "name"
     t.string "introduction"
     t.string "image_id"
-    t.string "roll_image_id"
+    t.string "roll_image_id"ƒ
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
