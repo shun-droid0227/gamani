@@ -12,7 +12,42 @@
   <% end %>
 </div>
 
+<div class = "col-xs-12 post_container">
+
+  <div class = "col-xs-2" style = 'padding-top: 15px;'>
+    <%= attachment_image_tag @thread_responces.last.user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'60x60' %>
+  </div>
+
+  <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
+    
+    <div class = 'col-xs-12'>
+      <%= @thread_responces.last.id %>：
+      <%= link_to @thread_responces.last.user.name, @thread_responces.last.user %>
+    </div>
+
+    <div class = 'col-xs-12' style = 'padding-top: 5px; padding-bottom: 5px;'>
+      <%= @thread_responces.last.sentence%>
+    </div>
+
+    <div class = 'col-xs-12'>
+      <% if (@thread_responces.last[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>
+      <!--Date.todayは、今日の年月日を取得できる。matchメソッドを使用し、hogeのレコード内に今日の年月日があるかどうか確認。
+　　　　  to_sで文字列に変換しているのは、matchメソッドは文字列にしか適用できないため。-->
+
+        <%= time_ago_in_words(@thread_responces.last.created_at)%>前
+      <% else %>
+        <%= @thread_responces.last.created_at.strftime('%Y/%m/%d/%H:%M:%S')%>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 <% @thread_responces.each do |f| %>
+
+  <% if f == @thread_responces.last %>
+    <% break %>
+  <% end %>
+
   <div class = "col-xs-12 post_container">
 
     <div class = "col-xs-2" style = 'padding-top: 15px;'>
@@ -22,6 +57,7 @@
     <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
       
       <div class = 'col-xs-12'>
+        <%= f.id %>：
         <%= link_to f.user.name, f.user %>
       </div>
 
@@ -30,7 +66,14 @@
       </div>
 
       <div class = 'col-xs-12'>
-        <%= f.created_at%>
+        <% if (f[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>
+        <!--Date.todayは、今日の年月日を取得できる。matchメソッドを使用し、hogeのレコード内に今日の年月日があるかどうか確認。
+　　　　  to_sで文字列に変換しているのは、matchメソッドは文字列にしか適用できないため。-->
+
+          <%= time_ago_in_words(f.created_at)%>前
+        <% else %>
+          <%= f.created_at.strftime('%Y/%m/%d/%H:%M:%S')%>
+        <% end %>
       </div>
 
     </div>
