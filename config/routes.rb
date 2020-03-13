@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'tops/top'
+  get 'tops/about'
+  
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
