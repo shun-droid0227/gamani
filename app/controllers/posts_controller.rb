@@ -15,11 +15,18 @@ class PostsController < ApplicationController
   
 
   def create
+    @post = Post.new
+    @user = current_user
+    if post_params[:post_images_images].count >= 5
+      get_users = current_user.followings.pluck(:id)
+      get_users.push(current_user.id)
+      @time_line_posts = Post.where(user_id: get_users).order(created_at: :desc)
+      flash[:danger] = '写真は四枚までしか投稿できません。'
+      return
+    end
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save(post_params)
-    @post = Post.new
-    @user = current_user
     get_users = current_user.followings.pluck(:id)
     get_users.push(current_user.id)
     @time_line_posts = Post.where(user_id: get_users).order(created_at: :desc)
