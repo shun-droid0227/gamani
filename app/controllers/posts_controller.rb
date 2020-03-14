@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       get_users = current_user.followings.pluck(:id)
       get_users.push(current_user.id)
       @time_line_posts = Post.where(user_id: get_users).order(created_at: :desc)
-      flash[:danger] = '写真は四枚までしか投稿できません。'
+      flash[:danger] = '写真は4枚までしか投稿できません。'
       return
     end
     post = Post.new(post_params)

@@ -1,7 +1,7 @@
 <div class = 'col-xs-12'>
   <div class = "tittle_home" style = 'padding-left: 20px'>
-  <p>ホーム</p>
-  <p style = 'color: orange;'><%= flash[:danger] %></p>
+    <p>ホーム</p>
+    <p style = 'color: orange;'><%= flash[:danger] %></p>
   </div>
 </div>
 
@@ -17,6 +17,7 @@
           <%= f.attachment_field :post_images_images,style: 'display: none;', accept:'image/jpg,image/jpeg,image/png,image/gif',multiple: true %>
         <% end %>
       <%= button_tag type: 'submit', class: 'btn btn-primary' do%>
+        <i class="far fa-paper-plane"></i>
         投稿する
       <% end %>
     <% end %>
