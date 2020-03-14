@@ -1,7 +1,7 @@
 
 <% users.each do |user|%>
   <div class = "col-xs-12 post_container">
-    <div class = "col-xs-2" style = 'padding-top: 15px;'>
+    <div class = "col-xs-2" style = 'padding-top: 15px;padding-bottom: 15px;'>
       <%= attachment_image_tag user, :image, :fill,60,60, class: "image-circle pull-left profile-thub rounded_corners", fallback: "no_image.jpg", size:'60x60' %>
     </div>
 

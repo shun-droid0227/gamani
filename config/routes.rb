@@ -33,5 +33,7 @@ Rails.application.routes.draw do
   resources :game_genles, only: [:index,:create,:destroy]
   resources :responses, only: [:create]
   resources :relationships, only: [:create,:destroy]
-  
+
+  get '/relationships/:id', to: 'relationships#index'
+
 end

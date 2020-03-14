@@ -22,6 +22,24 @@
   <div style = "padding-left: 15px; font-size: 17px">
     <%= @user.introduction%>
   </div>
+
+  <div class = 'col-xs-3' style = 'padding-top:10px;'>
+    <%= link_to relationship_path(id: @user.id, users: 'followings') do %>
+      <%= @user.followings.count%>
+      人フォロー中
+    <% end %>
+  </div>
+  <div class = 'col-xs-3' style = 'padding-top:10px;'>
+    <%= link_to relationship_path(id: @user.id, users: 'followers') do %>
+      <%= @user.followers.count%>
+      人フォロワー
+    <% end %>
+  </div>
+
+  <div class = 'col-xs-3' style = 'padding-top:10px;'></div>
+  <div class = 'col-xs-3' style = 'padding-top:10px;'></div>
+
+
 </div>
 
 <%= attachment_image_tag @user, :image, :fill,100,100, class: "image-circle pull-left profile-thub rounded_corners icon_position user_icon_border", fallback: "no_image.jpg", size:'100x100' %>
