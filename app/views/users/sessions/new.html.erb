@@ -1,9 +1,7 @@
 
 <div class = 'container-fluid'>
   </div class = 'row'>
-    <div class = 'col-xs-1'>
-
-    </div>
+    <div class = 'col-xs-1'></div>
     
     <div class = 'col-xs-6'>
     
@@ -18,31 +16,31 @@
     </div>
 
     <div class = 'col-xs-5' style = 'padding-top: 10px;'>
-        <h2 style = 'color: white;'>ログイン</h2>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h2 style = 'color: white;'>ログイン</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         
+        <div class="field">
+          <%= f.label :email ,style: 'color:white'%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" ,style: 'width:80%;border-radius: 5px;'%>
+        </div>
+
+        <div class="field">
+          <%= f.label :password ,style: 'color:white'%><br />
+          <%= f.password_field :password, autocomplete: "current-password",style: 'width:80%;border-radius: 5px;' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
           <div class="field">
-            <%= f.label :email ,style: 'color:white'%><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" ,style: 'width:80%;border-radius: 5px;'%>
-          </div>
-
-          <div class="field">
-            <%= f.label :password ,style: 'color:white'%><br />
-            <%= f.password_field :password, autocomplete: "current-password",style: 'width:80%;border-radius: 5px;' %>
-          </div>
-
-          <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :'ログイン状態を保持する' ,style: 'color:white'%>
-            </div>
-          <% end %>
-
-          <div class="actions">
-            <%= f.submit "ログイン" %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :'ログイン状態を保持する' ,style: 'color:white'%>
           </div>
         <% end %>
 
+        <div class="actions">
+          <%= f.submit "ログイン" %>
+        </div>
+      <% end %>
     </div>
+    
   </div>
 </div>
