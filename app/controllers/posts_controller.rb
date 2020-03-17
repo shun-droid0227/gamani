@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @user = current_user
-    if post_params[:post_images_images].count >= 5
+    if post_params[:post_images_images].count > 5
       get_users = current_user.followings.pluck(:id)
       get_users.push(current_user.id)
       @time_line_posts = Post.where(user_id: get_users).order(created_at: :desc)
