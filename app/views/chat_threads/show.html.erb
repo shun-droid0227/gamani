@@ -42,6 +42,7 @@
 
   </div>
 </div>
+<% i = @thread_responces.count%>
 <% @thread_responces.each do |f| %>
 
   <% if f == @thread_responces.last %>
@@ -57,7 +58,8 @@
     <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
       
       <div class = 'col-xs-12'>
-        <%= f.id %>：
+        <%= i %>：
+        <% i = i - 1%>
         <%= link_to f.user.name, f.user %>
       </div>
 
