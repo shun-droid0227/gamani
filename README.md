@@ -37,9 +37,6 @@ gemfileに追記後、bundle install実行
 デモ用に既に登録してある会員情報をお使いください。<br>
 メールアドレス:sss@sss<br>
 パスワード :111222<br>
-URL:http://13.59.128.201/<br>
-<a href="http://13.59.128.201/" target="_blank">Gamani</a>
-[http://13.59.128.201/](http://13.59.128.201/){:target="_blank"}
 [go](http://stackoverflow.com){:target="_blank"}.
 
  
