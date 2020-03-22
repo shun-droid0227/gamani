@@ -1,49 +1,44 @@
-<
-<div class = 'container'>
-  </div class = 'row'>
-    <div class = 'col-xs-1'></div>
-    
-    <div class = 'col-xs-6'>
-    
-      <div class  = 'home_top'>
-        <h1>ようこそGamaniへ！</h1>
-        <p>このサイトはゲーマーが交流するためのSNSサイトです。</p>
-        <p>今何をしているかタイムラインに投稿したり、</p>
-        <p>好きなゲームの質問や意見交換を掲示板でしたり、</p>
-        <p>いろいろな人と交流して友達を増やしてみましょう！</p>
-      </div>
-    
-    </div>
+<div class = 'col-xs-1'></div>
 
-    <div class = 'col-xs-5'>
-        <h2 style = 'color: white;'>会員登録</h2>
-        <<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="field" style = 'padding-top: 5px;'>
-            <%= f.label :'名前', style: 'color:white;'%><br />
-            <%= f.text_field :name ,style: 'width:80%;border-radius: 5px;'%>
-          </div>
+<div class = 'col-xs-6'>
 
-          <div class="field" style = 'padding-top: 5px;'>
-            <%= f.label :email , style: 'color:white;'%><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email",style: 'width:80%;border-radius: 5px;' %>
-          </div>
-
-          <div class="field" style = 'padding-top: 5px;'>
-            <%= f.label :'パスワード 6文字以上', style: 'color:white;'%><br />
-            <%= f.password_field :password, autocomplete: "new-password",style: 'width:80%;border-radius: 5px;' %>
-          </div>
-
-          <div class="field" style = 'padding-top: 5px;'>
-            <%= f.label :'確認のためもう1度同じパスワードを入力して下さい' , style: 'color:white;'%><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password",style: 'width:80%;border-radius: 5px;' %>
-          </div>
-
-          <div class="actions" style = 'padding-top: 10px;'>
-            <%= f.submit "会員登録" %>
-          </div>
-        <% end %>
-
-    </div>
+  <div class  = 'home_top'>
+    <h1>ようこそGamaniへ！</h1>
+    <p>このサイトはゲーマーが交流するためのSNSサイトです。</p>
+    <p>今何をしているかタイムラインに投稿したり、</p>
+    <p>好きなゲームの質問や意見交換を掲示板でしたり、</p>
+    <p>いろいろな人と交流して友達を増やしてみましょう！</p>
   </div>
+
+</div>
+
+<div class = 'col-xs-5'>
+    <h2 style = 'color: white;'>会員登録</h2>
+    <<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field" style = 'padding-top: 5px;'>
+        <%= f.label :'名前', style: 'color:white;'%><br />
+        <%= f.text_field :name ,style: 'width:80%;border-radius: 5px;'%>
+      </div>
+
+      <div class="field" style = 'padding-top: 5px;'>
+        <%= f.label :email , style: 'color:white;'%><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",style: 'width:80%;border-radius: 5px;' %>
+      </div>
+
+      <div class="field" style = 'padding-top: 5px;'>
+        <%= f.label :'パスワード 6文字以上', style: 'color:white;'%><br />
+        <%= f.password_field :password, autocomplete: "new-password",style: 'width:80%;border-radius: 5px;' %>
+      </div>
+
+      <div class="field" style = 'padding-top: 5px;'>
+        <%= f.label :'確認のためもう1度同じパスワードを入力して下さい' , style: 'color:white;'%><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",style: 'width:80%;border-radius: 5px;' %>
+      </div>
+
+      <div class="actions" style = 'padding-top: 10px;'>
+        <%= f.submit "会員登録" %>
+      </div>
+    <% end %>
+
 </div>
