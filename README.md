@@ -39,6 +39,7 @@ gemfileに追記後、bundle install実行
 パスワード :111222<br>
 URL:http://13.59.128.201/<br>
 <a href="http://13.59.128.201/" target="_blank">Gamani</a>
+[http://13.59.128.201/](http://13.59.128.201/){:target="_blank"}
 
  
 # 作成者情報
