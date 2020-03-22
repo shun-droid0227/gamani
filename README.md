@@ -18,14 +18,14 @@
 
 gems
 
-gem 'devise'
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'jquery-rails'
-gem 'pry-byebug'
-gem 'font-awesome-sass', '~> 5.4.1'
-gem 'rails-i18n'
+gem 'devise'<br>
+gem "refile", require: "refile/rails", github: 'manfe/refile'<br>
+gem "refile-mini_magick"<br>
+gem 'bootstrap-sass', '~> 3.4.1'<br>
+gem 'jquery-rails'<br>
+gem 'pry-byebug'<br>
+gem 'font-awesome-sass', '~> 5.4.1'<br>
+gem 'rails-i18n'<br>
  
 # gemのインストール方法
 
