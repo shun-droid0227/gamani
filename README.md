@@ -37,7 +37,7 @@ gemfileに追記後、bundle install実行
 デモ用に既に登録してある会員情報をお使いください。<br>
 メールアドレス:sss@sss<br>
 パスワード :111222<br>
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+[URL](http://13.59.128.201/)
 
  
 # 作成者情報
