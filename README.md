@@ -1,6 +1,6 @@
-アプリ名：Gamani
- 
-#"Gamani"とは
+#アプリ名：Gamani 
+"Gamani"とは
+
 ゲーマーが交流するためのSNSサイトです。
 
  
