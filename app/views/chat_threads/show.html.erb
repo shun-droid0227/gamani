@@ -21,8 +21,7 @@
   <div class = "col-xs-10 post_sentence" style = "padding-right: 0; padding-left: 0">
     
     <div class = 'col-xs-12'>
-      <%= @thread_responces.last.id %>：
-      <%= link_to @thread_responces.last.user.name, @thread_responces.last.user %>
+      スレッド説明文：<%= link_to @thread_responces.last.user.name, @thread_responces.last.user %>
     </div>
 
     <div class = 'col-xs-12' style = 'padding-top: 5px; padding-bottom: 5px;'>
@@ -42,7 +41,7 @@
 
   </div>
 </div>
-<% i = @thread_responces.count%>
+<% i = @thread_responces.count - 1%>
 <% @thread_responces.each do |f| %>
 
   <% if f == @thread_responces.last %>
